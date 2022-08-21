@@ -1,7 +1,4 @@
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 public class Main {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
@@ -16,5 +13,16 @@ public class Main {
         });
 
         System.out.println(future.get()); //return null if task has finished successfully.
+
+        // callable execution
+
+        Future future1 = executorService.submit(new Callable() {
+            @Override
+            public String call() {
+                return "Success";
+            }
+        });
+
+        System.out.println(future1.get());
     }
 }

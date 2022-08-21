@@ -28,3 +28,9 @@ We can use a Future to check the return value.
 
     System.out.println(future.get()); //return null if task has finished successfully.
 }
+
+
+Inter-thread communication methods:
+1. Wait —> wait for another thread to notify
+2. Notify—> notify other waiting threads.
+3. notifyAll —> if more than one thread is in waiting then notify all the threads by using notifuAll method.
